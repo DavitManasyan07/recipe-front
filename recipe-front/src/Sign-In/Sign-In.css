@@ -1,0 +1,47 @@
+.signInBody{
+    margin: auto;
+    margin-top: 7rem;
+    width: 35%;
+    height: 75vh;
+    background-color: #f3e9dc;
+    border-radius: 8%;
+    border: 4px solid #D96F32;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+}
+
+header{
+    text-align: center;
+    font-size: 5rem;
+    font-weight: bold;
+    padding-top: 6rem;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 18%;
+}
+
+input{
+    margin: 5px 0;
+    width: 32rem;
+    height: 5rem;
+    border-radius: 1rem;
+    border: 2px solid #D96F32;
+    font-size: 2rem;
+    padding-left: 1rem;
+}
+
+.link{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 1.5rem;
+    color: #D96F32;
+    text-decoration: none;
+}
+
+.field-button{
+    margin-top: 1.5rem;
+}

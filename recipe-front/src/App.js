@@ -5,6 +5,8 @@ import Main from "./Main/Main";
 import { useSelector } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router";
 import Home from "./Home/Home";
+import SignUp from "./Sign-Up/Sign-Up";
+import SignIn from "./Sign-In/Sign-In";
 
 function App() {
   const loggedInUser = useSelector(selectLoggedInUser);
@@ -16,8 +18,8 @@ function App() {
           {!loggedInUser ? (
             <>
               <Route path="/" element={<Main />} />
-              <Route path="/signup" element={<Main />} />
-              <Route path="/signin" element={<Main />} />
+              <Route path="/signup" element={<SignUp />} />
+              <Route path="/signin" element={<SignIn />} />
             </>
           ) : (
             <>
