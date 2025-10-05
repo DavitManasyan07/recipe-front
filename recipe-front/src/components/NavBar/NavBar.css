@@ -1,9 +1,52 @@
-.navbarBody{
+.navbarBody {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
     background-color: #D96F32;
-    padding: 0px 10px;
-    width: auto;
-    height: 75px;
+    border-bottom: 4px solid #f3e9dc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    animation: slideDown 0.5s ease;
+}
+
+.navbar--part {
     display: flex;
     align-items: center;
-    justify-content:  space-between;
+    gap: 1.2rem;
+}
+
+.navbar--part.left {
+    justify-content: flex-start;
+}
+
+.navbar--part.right {
+    justify-content: flex-end;
+}
+
+.navbarBody a {
+    text-decoration: none;
+}
+
+@keyframes slideDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Optional: subtle hover effect for buttons in navbar */
+.navbarBody button {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.navbarBody button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
