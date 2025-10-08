@@ -1,45 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  user: null,
+  token: null,
+  recipes: [],
+  favorites: [],
+}
+
 export const authSlice = createSlice({
   name: "authSlice",
-  initialState: {
-    loggedInUser: null,
-    email: "",
-    userName: "",
-    recipe: [],
-    favorites: [],
-    userId: "",
-  },
+  initialState,
   reducers: {
-    setLoggedInUser: (state, action) => {
-      state.loggedInUser = action.payload;
+    setCredentials: (state, action) => {
+      state.user = action.payload.user;
+      state.token = action.payload.token
     },
-    setEmail: (state, action) => {
-      state.email = action.payload;
+    logout: (state) => {
+      state.user = null;
+      state.token = null;
+      state.favorites = [];
+      state.recipes = [];
+      localStorage.removeItem("token")
     },
-    setName: (state, action) => {
-      state.userName = action.payload;
-    },
-    setRecipe: (state, action) => {
-      state.recipe = [...action.payload];
+    setRecipes: (state, action) => {
+      state.recipes = action.payload;
     },
     setFavorites: (state, action) => {
-      state.favorites = [...action.payload];
-    },
-    setUserId: (state, action) => {
-      state.userId = action.payload;
+      state.favorites = action.payload;
     },
   },
 });
 export const {
-  setLoggedInUser,
-  setEmail,
-  setName,
-  setRecipe,
+  setCredentials,
+  logout,
+  setRecipes,
   setFavorites,
-  setUserId,
 } = authSlice.actions;
-export const selectLoggedInUser = (state) => state.authSlice.loggedInUser;
-
+export const selectLoggedInUser = (state) => state.auth.user;
+export const selectToken = (state) => state.auth.token;
 
 export default authSlice.reducer;
